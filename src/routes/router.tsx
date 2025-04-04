@@ -1,11 +1,11 @@
-import { Navigate, Route, Routes, type RouteProps } from 'react-router-dom'
-import { adminRoutes, appRoutes, authRoutes, InstructorRoutes, shopRoutes, studentRoutes } from '@/routes/index'
-import AdminLayout from '@/layouts/AdminLayout'
-import ShopLayout from '@/layouts/ShopLayout'
-import InstructorLayout from '@/layouts/InstructorLayout'
-import StudentLayout from '@/layouts/StudentLayout'
-import OtherLayout from '@/layouts/OtherLayout'
 import { useAuthContext } from '@/context/useAuthContext'
+import AdminLayout from '@/layouts/AdminLayout'
+import InstructorLayout from '@/layouts/InstructorLayout'
+import OtherLayout from '@/layouts/OtherLayout'
+import ShopLayout from '@/layouts/ShopLayout'
+import StudentLayout from '@/layouts/StudentLayout'
+import { adminRoutes, appRoutes, authRoutes, InstructorRoutes, shopRoutes, studentRoutes } from '@/routes/index'
+import { Navigate, Route, Routes, type RouteProps } from 'react-router-dom'
 
 const AppRouter = (props: RouteProps) => {
   const { isAuthenticated } = useAuthContext()
