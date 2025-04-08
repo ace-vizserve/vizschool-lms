@@ -1,7 +1,7 @@
 import useScrollEvent from '@/hooks/useScrollEvent'
-import clsx from 'clsx'
 import { useRef } from 'react'
 
+import { cn } from '@/lib/utils'
 import type { ChildrenType } from '@/types/component-props'
 
 type TopbarProps = {
@@ -14,10 +14,13 @@ const TopNavbar = ({ children, className }: TopbarProps) => {
 
   return (
     <>
-      <header ref={headerRef} className={clsx('navbar-light navbar-sticky header-static', className, { 'navbar-sticky-on': scrollY >= 400 })}>
-        <nav className="navbar navbar-expand-xl">{children}</nav>
-      </header>
-      <div style={{ height: scrollY >= 400 ? `${headerRef.current?.offsetHeight}px` : 0 }} />
+      <div
+        ref={headerRef}
+        className={cn('tw:sticky tw:top-0 tw:bg-white tw:z-40', className, {
+          'tw:border-b': scrollY >= 400,
+        })}>
+        <nav className="tw:py-4 tw:mx-auto tw:max-w-7xl">{children}</nav>
+      </div>
     </>
   )
 }

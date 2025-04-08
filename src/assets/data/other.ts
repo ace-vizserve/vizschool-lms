@@ -2,15 +2,42 @@ import type {
   BlogType,
   CourseResumeType,
   EventScheduleType,
+  FreeCoursesType,
   NoticeBoardType,
   NotificationType,
+  OurProgramsType,
+  OurStatsType,
   PlayListType,
   PricingType,
   ReviewType,
+  SpecialCoursesType,
   StudentType,
   TestimonialType,
 } from '@/types/other'
 import { addOrSubtractDaysFromDate, addOrSubtractHoursFromDate } from '@/utils/date'
+
+import kidReading from '@/assets/images/stats/kid-reading.json'
+
+import ourPrograms1 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-1.png'
+import ourPrograms2 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-2.jpg'
+import ourPrograms3 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-3.jpg'
+import ourPrograms4 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-4.jpg'
+import ourPrograms5 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-5.jpg'
+import ourPrograms6 from '@/assets/images/virtual-courses/our-programs/our-programs-slide-6.jpg'
+
+import specialCourses1 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-1.jpg'
+import specialCourses2 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-2.jpg'
+import specialCourses3 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-3.jpg'
+import specialCourses4 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-4.jpg'
+import specialCourses5 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-5.jpg'
+import specialCourses6 from '@/assets/images/virtual-courses/special-courses/special-courses-slide-6.jpeg'
+
+import freeCourses1 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-1.jpg'
+import freeCourses2 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-2.jpg'
+import freeCourses3 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-3.jpg'
+import freeCourses4 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-4.jpg'
+import freeCourses5 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-5.jpg'
+import freeCourses6 from '@/assets/images/virtual-courses/free-courses/free-courses-slide-6.jpg'
 
 import avatar1 from '@/assets/images/avatar/01.jpg'
 import avatar2 from '@/assets/images/avatar/02.jpg'
@@ -32,6 +59,113 @@ import event8 from '@/assets/images/event/08.jpg'
 import event9 from '@/assets/images/event/09.jpg'
 import { BsPatchCheckFill, BsXOctagonFill } from 'react-icons/bs'
 import { FaBook, FaBookOpen, FaGlobe, FaUserTie } from 'react-icons/fa'
+
+export const ourStatsData: OurStatsType[] = [
+  {
+    description: 'Students explore new skills',
+    icon: kidReading,
+    stats: '95%',
+  },
+]
+
+export const ourProgramsData: OurProgramsType[] = [
+  {
+    courseTitle: 'English Proficiency & Literature',
+    image: ourPrograms1,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Mathematics Mastery',
+    image: ourPrograms2,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'Science Explorer (Physics, Chemistry, Biology)',
+    image: ourPrograms3,
+    instructor: 'Mr. John Doe',
+  },
+  {
+    courseTitle: 'Global History & Social Studies',
+    image: ourPrograms4,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Chinese Language Mastery (HCL & CL)',
+    image: ourPrograms5,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'O-Level Express Science Bundle',
+    image: ourPrograms6,
+    instructor: 'Mr. John Doe',
+  },
+]
+
+export const specialCoursesData: SpecialCoursesType[] = [
+  {
+    courseTitle: 'Young Innovators: STEM & Robotics',
+    image: specialCourses1,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Global Leadership & Public Speaking',
+    image: specialCourses2,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'Creative Digital Arts & Animation',
+    image: specialCourses3,
+    instructor: 'Mr. John Doe',
+  },
+  {
+    courseTitle: 'Creative Writing & Storytelling',
+    image: specialCourses4,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Advanced Robotics & Engineering',
+    image: specialCourses5,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'Public Speaking & Debate Mastery',
+    image: specialCourses6,
+    instructor: 'Mr. John Doe',
+  },
+]
+
+export const freeCoursesData: FreeCoursesType[] = [
+  {
+    courseTitle: 'Basic Coding for Beginners',
+    image: freeCourses1,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Financial Literacy for Kids & Teens',
+    image: freeCourses2,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'Environmental Awareness & Sustainability',
+    image: freeCourses3,
+    instructor: 'Mr. John Doe',
+  },
+  {
+    courseTitle: 'Digital Art & Animation Basics',
+    image: freeCourses4,
+    instructor: 'Ms. Sarah Doe',
+  },
+  {
+    courseTitle: 'Critical Thinking & Problem-Solving',
+    image: freeCourses5,
+    instructor: 'Ms. Jane Doe',
+  },
+  {
+    courseTitle: 'Singapore History & Cultural Studies',
+    image: freeCourses6,
+    instructor: 'Mr. John Doe',
+  },
+]
 
 export const testimonialData: TestimonialType[] = [
   {

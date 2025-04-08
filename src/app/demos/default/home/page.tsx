@@ -1,12 +1,11 @@
 import Footer from '@/components/Footer'
 import PageMetaData from '@/components/PageMetaData'
 import ActionBox from './components/ActionBox'
-import Counter from './components/Counter'
 import Hero from './components/Hero'
-import PopularCourse from './components/PopularCourse'
-import Reviews from './components/Reviews'
 import TopNavbar1 from './components/TopNavbar1'
-import TrendingCourses from './components/TrendingCourses'
+import ClassesTutors from './components/classes-tutors'
+import Testimonials from './components/testimonials'
+import VirtualCourses from './components/virtual-courses'
 
 const HomePage = () => {
   return (
@@ -15,11 +14,10 @@ const HomePage = () => {
       <TopNavbar1 />
       <main>
         <Hero />
-        <Counter />
-        <PopularCourse />
+        <ClassesTutors />
+        <VirtualCourses />
+        <Testimonials />
         <ActionBox />
-        <TrendingCourses />
-        <Reviews />
       </main>
       <Footer />
     </>

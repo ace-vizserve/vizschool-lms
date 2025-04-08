@@ -26,9 +26,9 @@ a {
   transition: $transition-base;
 }
 
-%heading > a{
+%heading > a {
   color: $headings-color;
-  &:hover{
+  &:hover {
     color: var(--#{$prefix}primary);
   }
 }
