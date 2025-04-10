@@ -1,6 +1,20 @@
 import type { IconType } from 'react-icons'
 export type IdType = string
 
+export type PopularArticlesType = {
+  image: string
+  title: string
+  description: string
+  duration: number
+}
+
+export type TestimonialsType = {
+  image: string
+  testimony: string
+  name: string
+  status: string
+}
+
 export type OurStatsType = {
   icon: unknown
   stats: string

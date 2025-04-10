@@ -1,6 +1,6 @@
+import { BsPatchCheckFill } from 'react-icons/bs'
 import { FaTv, FaUserGraduate, FaUserTie } from 'react-icons/fa'
 import type { CounterType } from './types'
-import { BsPatchCheckFill } from 'react-icons/bs'
 
 export const counterData: CounterType[] = [
   {

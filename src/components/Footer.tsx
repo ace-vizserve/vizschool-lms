@@ -1,164 +1,126 @@
-import { Link } from 'react-router-dom'
-import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
-import { FaChevronUp, FaFacebookF, FaGlobe, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
-import { currentYear, developedBy, developedByLink } from '@/context/constants'
-import clsx from 'clsx'
+import { footerLinks, footerLinks2, socialMediaLinks, talkToUsLinks } from '@/assets/data/footer-items'
+import { GlobeLockIcon, HandshakeIcon, MapIcon, TicketSlashIcon } from 'lucide-react'
+import MaxWidthWrapper from './max-width-wrapper'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
 
-import logo from '@/assets/images/logo.svg'
-import logoLight from '@/assets/images/logo-light.svg'
-import googlePlay from '@/assets/images/client/google-play.svg'
-import playStore from '@/assets/images/client/app-store.svg'
-import ukFlag from '@/assets/images/flags/uk.svg'
-import grFlag from '@/assets/images/flags/gr.svg'
-import spFlag from '@/assets/images/flags/sp.svg'
-import { footerLinks } from '@/assets/data/footer-items'
-
-const Footer = ({ className }: { className?: string }) => {
+const Footer = () => {
   return (
-    <footer className={clsx('pt-5', className)}>
-      <Container>
-        <Row className="g-4">
-          <Col lg={3}>
-            <Link className="me-0" to="/">
-              <img className="light-mode-item h-40px" width={189} height={40} src={logo} alt="logo" />
-              <img className="dark-mode-item h-40px" width={189} height={40} src={logoLight} alt="logo" />
-            </Link>
-            <p className="my-3">
-              Eduport education theme, built specifically for the education centers which is dedicated to teaching and involve learners.
-            </p>
-            <ul className="list-inline mb-0 mt-3">
-              <li className="list-inline-item">
-
-                <a className="btn btn-white btn-sm shadow px-2 text-facebook" href="#">
-                  <FaFacebookF className="fa-fw" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-
-                <a className="btn btn-white btn-sm shadow px-2 text-instagram" href="#">
-                  <FaInstagram className="fa-fw" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-
-                <a className="btn btn-white btn-sm shadow px-2 text-twitter" href="#">
-                  <FaTwitter className="fa-fw" />
-                </a>
-              </li>
-              <li className="list-inline-item">
-
-                <a className="btn btn-white btn-sm shadow px-2 text-linkedin" href="#">
-                  <FaLinkedinIn className="fa-fw" />
-                </a>
-              </li>
-            </ul>
-          </Col>
-          <Col lg={6}>
-            <Row className="g-4">
-              {footerLinks.map((link, idx) => (
-                <Col xs={6} md={4} key={idx}>
-                  <h5 className="mb-2 mb-md-4">{link.title}</h5>
-                  <ul className="nav flex-column">
-                    {link.items.map((item, idx) => (
-                      <li className="nav-item" key={idx}>
-                        <Link className="nav-link" to={item.link ?? ''}>
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </Col>
-              ))}
-            </Row>
-          </Col>
-          <Col lg={3}>
-            <h5 className="mb-2 mb-md-4">Contact</h5>
-            <p className="mb-2">
-              Toll free:<span className="h6 fw-light ms-2">+1234 568 963</span>
-              <span className="d-block small">(9:AM to 8:PM IST)</span>
-            </p>
-            <p className="mb-0">
-              Email:<span className="h6 fw-light ms-2">example@gmail.com</span>
-            </p>
-            <Row className="g-2 mt-2">
-              <Col xs={6} sm={4} md={3} lg={6}>
-                <span role="button">
-
-                  <img height={45} width={145} className="w-auto" src={googlePlay} alt="google-play" />
-                </span>
-              </Col>
-              <Col xs={6} sm={4} md={3} lg={6}>
-                <span role="button">
-
-                  <img height={45} width={145} className="w-auto" src={playStore} alt="app-store" />
-                </span>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <hr className="mt-4 mb-0" />
-        <div className="py-3">
-          <Container className="px-0">
-            <div className="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
-              <div className="text-body text-primary-hover">
-
-                Copyrights ©{currentYear} Eduport. Build by
-                <Link to={developedByLink} target="_blank" className="text-body">
-                  {developedBy}
-                </Link>
-              </div>
-              <div className="justify-content-center mt-3 mt-lg-0">
-                <ul className="nav list-inline justify-content-center mb-0">
-                  <li className="list-inline-item">
-                    <Dropdown className="dropup mt-0 text-center text-sm-end">
-                      <DropdownToggle
-                        as="a"
-                        className="nav-link arrow-none"
-                        role="button"
-                        id="languageSwitcher"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <FaGlobe className="me-2" />
-                        Language <FaChevronUp size={12} />
-                      </DropdownToggle>
-                      <DropdownMenu as="ul" className="min-w-auto" aria-labelledby="languageSwitcher">
-                        <li>
-                          <DropdownItem className="me-4" href="#">
-                            <img alt="uk" height={12} width={18} className="fa-fw me-2" src={ukFlag} />
-                            English
-                          </DropdownItem>
-                        </li>
-                        <li>
-                          <DropdownItem className="me-4" href="#">
-                            <img alt="gr" height={12} width={18} className="fa-fw me-2" src={grFlag} />
-                            German
-                          </DropdownItem>
-                        </li>
-                        <li>
-                          <DropdownItem className="me-4" href="#">
-                            <img alt="sp" height={12} width={18} className="fa-fw me-2" src={spFlag} />
-                            French
-                          </DropdownItem>
-                        </li>
-                      </DropdownMenu>
-                    </Dropdown>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="nav-link" href="#">
-                      Terms of use
-                    </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a className="nav-link pe-0" href="#">
-                      Privacy policy
-                    </a>
-                  </li>
-                </ul>
+    <footer className="tw:bg-[#343434]">
+      <MaxWidthWrapper className="tw:space-y-10 tw:sm:space-y-14 tw:md:space-y-14 tw:lg:space-y-20 tw:py-16">
+        <div className="tw:w-full tw:flex tw:flex-wrap tw:lg:flex-nowrap">
+          <div className="tw:w-full tw:flex tw:flex-wrap">
+            <div className="tw:w-1/2 tw:space-y-4">
+              <p className="tw:text-white tw:font-bold tw:text-lg">{footerLinks[0].title}</p>
+              <div className="tw:space-y-2">
+                {footerLinks[0].items.map((item, i) => (
+                  <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                    {item.name}
+                  </p>
+                ))}
               </div>
             </div>
-          </Container>
+            <div className="tw:w-1/2 tw:space-y-7">
+              <div className="tw:space-y-4 tw:w-full tw:md:w-44">
+                <p className="tw:text-white tw:font-bold tw:text-lg">{footerLinks2[0].title}</p>
+                <div className="tw:w-full tw:flex tw:justify-between">
+                  <div className="tw:space-y-2">
+                    {footerLinks2[0].items.slice(0, 3).map((item, i) => (
+                      <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                        {item.name}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="tw:space-y-2">
+                    {footerLinks2[0].items.slice(3).map((item, i) => (
+                      <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                        {item.name}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="tw:space-y-4 tw:w-full tw:md:w-52">
+                <p className="tw:text-white tw:font-bold tw:text-lg">{footerLinks2[1].title}</p>
+                <div className="tw:w-full tw:flex tw:justify-between">
+                  <div className="tw:space-y-2">
+                    {footerLinks2[1].items.slice(0, 2).map((item, i) => (
+                      <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                        {item.name}
+                      </p>
+                    ))}
+                  </div>
+                  <div className="tw:space-y-2">
+                    {footerLinks2[1].items.slice(2).map((item, i) => (
+                      <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                        {item.name}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="tw:py-10 tw:lg:py-0 tw:grow tw:flex tw:flex-wrap tw:flex-col tw:justify-center tw:lg:justify-start tw:w-full tw:md:w-1/2 tw:space-y-4">
+            <p className="tw:text-center tw:lg:text-right tw:text-white tw:text-2xl tw:font-bold">Subscribe to Our Newsletter!</p>
+            <div className="tw:flex tw:items-center tw:relative">
+              <Input placeholder="Your email address" className="tw:bg-white tw:text-sm tw:py-6 tw:w-full" />
+              <div className="tw:right-4 tw:z-10 tw:absolute">
+                <Button size={'sm'}>Subscribe</Button>
+              </div>
+            </div>
+          </div>
         </div>
-      </Container>
+        <div className="tw:grid tw:grid-cols-1 tw:md:grid-cols-2 tw:lg:grid-cols-3 tw:gap-8">
+          <div className="tw:w-max tw:mx-auto tw:md:mx-0 tw:space-y-4 tw:md:w-52">
+            <p className="tw:text-white tw:font-bold tw:text-lg tw:text-center tw:md:text-start">Follow us</p>
+            <div className="tw:flex tw:items-center tw:gap-4">
+              {socialMediaLinks.map((link) => (
+                <img key={link.icon} className="tw:size-6" src={link.icon} />
+              ))}
+            </div>
+          </div>
+          <div className="tw:space-y-4">
+            <p className="tw:text-white tw:font-bold tw:text-lg">Talk to us</p>
+            <div className="tw:flex tw:flex-col tw:justify-center tw:gap-4">
+              {talkToUsLinks.map((item) => (
+                <div key={item.details} className="tw:flex tw:items-center gap-2">
+                  <item.icon className="tw:stroke-white tw:size-4" />
+                  <span className="tw:text-white tw:text-xs tw:text-balance tw:-tracking-tighter">{item.details}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="tw:w-full tw:col-span-full tw:lg:col-span-1 tw:grid tw:grid-cols-2 tw:gap-6">
+            <div className="tw:flex tw:items-center tw:gap-2">
+              <HandshakeIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary tw:font-medium">Terms and conditions</span>
+            </div>
+            <div className="tw:justify-end tw:flex tw:items-center tw:gap-2">
+              <TicketSlashIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary tw:font-medium">Refund Policy</span>
+            </div>
+            <div className="tw:flex tw:items-center tw:gap-2">
+              <GlobeLockIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary tw:font-medium">Privacy Policy</span>
+            </div>
+            <div className="tw:justify-end tw:flex tw:items-center tw:gap-2">
+              <MapIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary tw:font-medium">Sitemap</span>
+            </div>
+          </div>
+        </div>
+      </MaxWidthWrapper>
+      <div className="tw:h-0.5 tw:w-full tw:bg-white" />
+      <MaxWidthWrapper>
+        <div className="tw:py-10 tw:flex tw:flex-col tw:md:flex-row tw:justify-between tw:items-center tw:w-full">
+          <h1 className="tw:text-2xl tw:md:text-4xl tw:text-white tw:font-bold">VizSchool</h1>
+          <span className="tw:text-white tw:text-xs tw:-tracking-tighter">
+            Copyright © {new Date().getFullYear()} VizSchool. All rights reserved.
+          </span>
+        </div>
+      </MaxWidthWrapper>
     </footer>
   )
 }

@@ -4,6 +4,7 @@ import ActionBox from './components/ActionBox'
 import Hero from './components/Hero'
 import TopNavbar1 from './components/TopNavbar1'
 import ClassesTutors from './components/classes-tutors'
+import PopularArticles from './components/popular-articles'
 import Testimonials from './components/testimonials'
 import VirtualCourses from './components/virtual-courses'
 
@@ -17,6 +18,7 @@ const HomePage = () => {
         <ClassesTutors />
         <VirtualCourses />
         <Testimonials />
+        <PopularArticles />
         <ActionBox />
       </main>
       <Footer />
