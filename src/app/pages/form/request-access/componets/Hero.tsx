@@ -7,6 +7,9 @@ import Image16 from '@/assets/images/element/16.svg'
 import { Col, Container, Row } from 'react-bootstrap'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const Hero = () => {
   return (
     <section className="bg-primary bg-opacity-10">
@@ -64,11 +67,10 @@ const Hero = () => {
                     ))}
                   {!Number.isInteger(4.5) && (
                     <li className="list-inline-item me-1 small">
-
                       <FaStarHalfAlt size={16} className="text-warning" />
                     </li>
                   )}
-                  {4.5 < 5 &&
+                  {rating1 < rating2 &&
                     Array(5 - Math.ceil(4.5))
                       .fill(0)
                       .map((_star, idx) => (

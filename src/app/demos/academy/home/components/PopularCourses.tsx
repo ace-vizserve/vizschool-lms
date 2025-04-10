@@ -16,6 +16,9 @@ type PricingType = {
   price: number
 }
 
+const rating1 = 4.5
+const rating2 = 5
+
 const CourseVideoCard = ({ showPricing, image }: { showPricing: boolean; image: string }) => {
   const pricingPlans: PricingType[] = [
     { duration: 6, price: 134 },
@@ -106,11 +109,10 @@ const DesignCourse = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (
@@ -227,11 +229,10 @@ const PopularCourse = ({ title, image }: { title: string; image: string }) => {
                 ))}
               {!Number.isInteger(4) && (
                 <li className="list-inline-item me-1 small">
-
                   <FaStarHalfAlt size={14} className="text-warning" />
                 </li>
               )}
-              {4 < 5 &&
+              {rating1 - 0.5 < rating2 &&
                 Array(5 - Math.ceil(4))
                   .fill(0)
                   .map((_star, idx) => (

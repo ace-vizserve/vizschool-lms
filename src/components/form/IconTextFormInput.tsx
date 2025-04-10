@@ -12,7 +12,7 @@ const IconTextFormInput = <TFieldValues extends FieldValues = FieldValues, TName
   name,
   containerClassName,
   control,
-  id,
+
   label,
   icon,
   noValidate,

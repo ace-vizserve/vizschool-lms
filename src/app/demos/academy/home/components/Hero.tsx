@@ -10,6 +10,9 @@ import avatar3 from '@/assets/images/avatar/03.jpg'
 import avatar4 from '@/assets/images/avatar/04.jpg'
 import element6 from '@/assets/images/element/06.png'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const Hero = () => {
   return (
     <section className="position-relative overflow-hidden pb-0 pb-sm-5">
@@ -113,11 +116,10 @@ const Hero = () => {
                     ))}
                   {!Number.isInteger(4.5) && (
                     <li className="list-inline-item me-1 small">
-
                       <FaStarHalfAlt size={14} className="text-warning" />
                     </li>
                   )}
-                  {4.5 < 5 &&
+                  {rating1 < rating2 &&
                     Array(5 - Math.ceil(4.5))
                       .fill(0)
                       .map((_star, idx) => (

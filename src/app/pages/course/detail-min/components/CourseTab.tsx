@@ -1,24 +1,27 @@
 import { Button, Col, Nav, NavItem, NavLink, ProgressBar, Row, TabContainer, TabContent, TabPane } from 'react-bootstrap'
 
-import { Link } from 'react-router-dom'
-import { Fragment } from 'react'
-import { useForm } from 'react-hook-form'
-import { FaCheckCircle, FaRegStar, FaReply, FaStar, FaStarHalfAlt } from 'react-icons/fa'
-import * as yup from 'yup'
+import ChoicesFormInput from '@/components/form/ChoicesFormInput'
+import TextAreaFormInput from '@/components/form/TextAreaFormInput'
+import TextFormInput from '@/components/form/TextFormInput'
 import { useFetchData } from '@/hooks/useFetchData'
 import { ReviewType } from '@/types/other'
 import { splitArray } from '@/utils/array'
 import { timeSince } from '@/utils/date'
-import ChoicesFormInput from '@/components/form/ChoicesFormInput'
-import TextAreaFormInput from '@/components/form/TextAreaFormInput'
-import TextFormInput from '@/components/form/TextFormInput'
 import { yupResolver } from '@hookform/resolvers/yup'
 import clsx from 'clsx'
+import { Fragment } from 'react'
+import { useForm } from 'react-hook-form'
+import { FaCheckCircle, FaRegStar, FaReply, FaStar, FaStarHalfAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import * as yup from 'yup'
 
 import avatar9 from '@/assets/images/avatar/09.jpg'
 
-import { commentData, faqsData } from '../data'
 import { getAllUserReviews } from '@/helpers/data'
+import { commentData, faqsData } from '../data'
+
+const rating1 = 4.5
+const rating2 = 5
 
 const Overview = () => {
   const features = [
@@ -111,11 +114,10 @@ const UserReviews = () => {
                 ))}
               {!Number.isInteger(4.5) && (
                 <li className="list-inline-item me-1 small">
-
                   <FaStarHalfAlt size={16} className="text-warning" />
                 </li>
               )}
-              {4.5 < 5 &&
+              {rating1 < rating2 &&
                 Array(5 - Math.ceil(4.5))
                   .fill(0)
                   .map((_star, idx) => (
@@ -145,7 +147,6 @@ const UserReviews = () => {
                       ))}
                     {!Number.isInteger(5 - idx) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
@@ -185,7 +186,6 @@ const UserReviews = () => {
                         ))}
                       {!Number.isInteger(review.rating) && (
                         <li className="list-inline-item me-1 small">
-
                           <FaStarHalfAlt size={16} className="text-warning" />
                         </li>
                       )}
@@ -260,7 +260,6 @@ const Comment = () => {
         <div className="d-flex mb-4">
           <div className="avatar avatar-sm flex-shrink-0 me-2">
             <span role="button">
-
               <img className="avatar-img rounded-circle" src={avatar9} alt="avatar" />
             </span>
           </div>
@@ -286,7 +285,6 @@ const Comment = () => {
                       <div className="d-flex justify-content-center">
                         <div className="me-2">
                           <h6 className="mb-1 lead fw-bold">
-
                             <a href="#!"> {comment.name} </a>
                           </h6>
                           <p className="h6 mb-0">{comment.comment}</p>
@@ -296,24 +294,18 @@ const Comment = () => {
                     </div>
                     <ul className="nav nav-divider py-2 small">
                       <li className="nav-item">
-
                         <a className="text-primary-hover" href="#">
-
                           Like {comment.like && comment.like}
                         </a>
                       </li>
                       <li className="nav-item">
-
                         <a className="text-primary-hover" href="#">
-
                           Reply
                         </a>
                       </li>
                       {comment.replies && (
                         <li className="nav-item">
-
                           <a className="text-primary-hover" href="#">
-
                             View {comment.replies} replies
                           </a>
                         </li>
@@ -336,7 +328,6 @@ const Comment = () => {
                               <div className="d-flex justify-content-center">
                                 <div className="me-2">
                                   <h6 className="mb-1  lead fw-bold">
-
                                     <a href="#"> {comment.name} </a>
                                   </h6>
                                   <p className=" mb-0">{comment.comment}</p>
@@ -347,13 +338,11 @@ const Comment = () => {
                             <ul className="nav nav-divider py-2 small">
                               <li className="nav-item">
                                 <Link className="text-primary-hover" to="">
-
                                   Like {comment.like && comment.like}
                                 </Link>
                               </li>
                               <li className="nav-item">
                                 <Link className="text-primary-hover" to="">
-
                                   Reply
                                 </Link>
                               </li>

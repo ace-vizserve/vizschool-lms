@@ -13,16 +13,6 @@ type FooterLink = {
   }[]
 }
 
-type FooterLinkType = {
-  name: string
-  link?: string
-}
-
-type SocialMediaType = {
-  icon: IconType
-  variant: string
-}
-
 export const footerLinks: FooterLink[] = [
   {
     title: 'Get Started',

@@ -1,11 +1,11 @@
 import useViewPort from '@/hooks/useViewPort'
-import { Link } from 'react-router-dom'
+import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import { Card, CardBody, CardFooter, CardHeader, Col, Container, Row } from 'react-bootstrap'
 import { FaRegThumbsDown, FaRegThumbsUp } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import Sticky from 'react-sticky-el'
 import { tabsData } from '../data'
-import clsx from 'clsx'
 
 const HelpCenterDetails = () => {
   const [hash, setHash] = useState<string | undefined>()
@@ -28,7 +28,7 @@ const HelpCenterDetails = () => {
     return () => {
       clearTimeout(timeout)
     }
-  }, [])
+  }, [hash])
 
   return (
     <section>
@@ -195,7 +195,6 @@ const HelpCenterDetails = () => {
                         </label>
                         <input type="radio" className="btn-check" name="btnradio" id="btnradio2" />
                         <label className="btn btn-outline-light btn-sm mb-0" htmlFor="btnradio4">
-
                           No <FaRegThumbsDown className="ms-1" />
                         </label>
                       </div>
@@ -255,7 +254,6 @@ const HelpCenterDetails = () => {
                         </label>
                         <input type="radio" className="btn-check" name="btnradio" id="btnradio4" />
                         <label className="btn btn-outline-light btn-sm mb-0" htmlFor="btnradio4">
-
                           No <FaRegThumbsDown className="ms-1" />
                         </label>
                       </div>
@@ -297,7 +295,6 @@ const HelpCenterDetails = () => {
                         </label>
                         <input type="radio" className="btn-check" name="btnradio" id="btnradio6" />
                         <label className="btn btn-outline-light btn-sm mb-0" htmlFor="btnradio4">
-
                           No <FaRegThumbsDown className="ms-1" />
                         </label>
                       </div>

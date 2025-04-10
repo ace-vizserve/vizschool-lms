@@ -1,6 +1,6 @@
-import LogoBox from '@/components/LogoBox'
+import LogoBox from '@/components/logo-box'
 import TopNavbar from '@/components/TopNavbar'
-import Menu from '@/components/TopNavbar/components/Menu'
+import Menu from '@/components/TopNavbar/components/menu'
 
 const TopNavbar1 = () => {
   return (

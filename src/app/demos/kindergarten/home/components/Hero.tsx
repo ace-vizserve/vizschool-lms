@@ -6,6 +6,9 @@ import element4 from '@/assets/images/element/04.png'
 import element5 from '@/assets/images/element/05.png'
 import rocketImg from '@/assets/images/element/rocket.svg'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const Hero = () => {
   return (
     <section className="position-relative overflow-hidden pt-4 py-sm-5">
@@ -48,7 +51,6 @@ const Hero = () => {
             <Counter />
             <div className="d-sm-flex justify-content-center align-items-center mt-5">
               <div>
-
                 <Button variant="primary-soft" size="lg" className="mb-3 mb-sm-0">
                   Book now
                 </Button>
@@ -66,11 +68,10 @@ const Hero = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (

@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 
-import { Link } from 'react-router-dom'
 import {
   Card,
   CardBody,
@@ -17,8 +16,9 @@ import {
 } from 'react-bootstrap'
 import { BsBell, BsGridFill, BsHeart } from 'react-icons/bs'
 import { FaChevronDown, FaSearch } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
-import LogoBox from '@/components/LogoBox'
+import LogoBox from '@/components/logo-box'
 import ProfileDropdown from '@/components/TopNavbar/components/ProfileDropdown'
 import useScrollEvent from '@/hooks/useScrollEvent'
 import useToggle from '@/hooks/useToggle'
@@ -144,7 +144,6 @@ const TopNavigationBar = () => {
             <ul className="nav flex-row align-items-center list-unstyled ms-xl-auto">
               <li className="nav-item ms-0 ms-sm-2 d-none d-sm-block">
                 <a className="btn btn-light btn-round mb-0" href="#">
-
                   <BsHeart className="fa-fw" />
                 </a>
               </li>
@@ -177,31 +176,24 @@ const TopNavigationBar = () => {
                     </DropdownToggle>
                     <ul className="dropdown-menu" aria-labelledby="demoMenu">
                       <li>
-
                         <DropdownItem href="#">Web Development</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Data Science</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Mobile Development</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Programing Language</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Software Testing</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Software Engineering</DropdownItem>
                       </li>
                       <li>
-
                         <DropdownItem href="#">Software Development Tools</DropdownItem>
                       </li>
                     </ul>
