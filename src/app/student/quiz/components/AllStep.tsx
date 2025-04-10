@@ -10,9 +10,9 @@ import Step4 from './Step4'
 const Countdown = () => {
   const [timer, setTimer] = useState(90)
   const timerToString = () => {
-    let hours = ('0' + Math.floor(timer / 3600)).slice(-2)
-    let minutes = ('0' + Math.floor(timer / 60)).slice(-2)
-    let seconds = ('0' + (timer % 60)).slice(-2)
+    const hours = ('0' + Math.floor(timer / 3600)).slice(-2)
+    const minutes = ('0' + Math.floor(timer / 60)).slice(-2)
+    const seconds = ('0' + (timer % 60)).slice(-2)
     return hours + ':' + minutes + ':' + seconds
   }
 

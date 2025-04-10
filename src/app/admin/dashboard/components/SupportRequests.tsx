@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { Fragment } from 'react/jsx-runtime'
 
 const SupportRequestsCard = ({ description, name, time, image }: SupportRequestsType) => {
-  var randomItem = colorVariants[Math.floor(Math.random() * colorVariants.length)]
+  const randomItem = colorVariants[Math.floor(Math.random() * colorVariants.length)]
 
   return (
     <>

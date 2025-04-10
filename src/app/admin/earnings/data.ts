@@ -16,7 +16,7 @@ export type EarningsType = {
   title: string
   amount: number
   variant: BootstrapVariantType | ExtraVariants
-  isInfo: Boolean
+  isInfo: boolean
 }
 
 export const earningsData: EarningsType[] = [

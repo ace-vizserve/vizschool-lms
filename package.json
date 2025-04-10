@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
   },
@@ -59,6 +60,7 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
     "@types/aos": "^3.0.7",
     "@types/imagesloaded": "^4.1.6",
     "@types/isotope-layout": "^3.0.13",
@@ -68,13 +70,16 @@
     "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.21.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.19.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint": "^9.24.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^16.0.0",
     "prettier": "^3.4.2",
     "sass": "1.77.6",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3",
+    "typescript-eslint": "^8.29.1",
     "vite": "^6.2.5"
   }
 }
