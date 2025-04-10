@@ -13,7 +13,7 @@ const CourseDetailModule = () => {
         <Intro />
         <CourseDetail />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

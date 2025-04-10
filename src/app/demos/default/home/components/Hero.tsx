@@ -7,7 +7,7 @@ import Lottie from 'lottie-react'
 const Hero = () => {
   return (
     <section className="tw:flex tw:flex-col tw:gap-24 tw:overflow-visible tw:!p-0">
-      <MaxWidthWrapper className="container tw:pt-20 tw:lgd:pt-0">
+      <MaxWidthWrapper className="container tw:pt-20 tw:lg:pt-0">
         <div className="tw:h-screen tw:md:max-h-[650px] tw:w-full tw:flex tw:flex-col-reverse tw:xl:flex-row tw:justify-center tw:items-center tw:gap-7 tw:md:gap-11">
           <div className="tw:size-full tw:relative tw:flex tw:items-center tw:justify-center">
             <svg

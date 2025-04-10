@@ -11,7 +11,7 @@ const TopNavigationBar = () => {
   return (
     <TopNavbar>
       <Container>
-        <LogoBox height={36} width={143} />
+        <LogoBox />
         <TopbarMenuToggler />
         <AppMenu mobileMenuOpen={appMenuControl.open} menuClassName="mx-auto" showExtraPages searchInput />
         <ProfileDropdown className="ms-1 ms-lg-0" />

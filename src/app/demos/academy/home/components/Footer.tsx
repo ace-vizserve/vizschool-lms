@@ -1,16 +1,14 @@
-import { Link } from 'react-router-dom'
-import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
 import { footerLinks, socialMediaLinks } from '@/assets/data/footer-items'
-import { FaChevronUp, FaGlobe } from 'react-icons/fa'
-import clsx from 'clsx'
-import { developedBy, developedByLink } from '@/context/constants'
-
-import logoLight from '@/assets/images/logo-light.svg'
-import googlePlay from '@/assets/images/client/google-play.svg'
 import playStore from '@/assets/images/client/app-store.svg'
-import ukFlag from '@/assets/images/flags/uk.svg'
+import googlePlay from '@/assets/images/client/google-play.svg'
 import grFlag from '@/assets/images/flags/gr.svg'
 import spFlag from '@/assets/images/flags/sp.svg'
+import ukFlag from '@/assets/images/flags/uk.svg'
+import logoLight from '@/assets/images/logo-light.svg'
+import { developedBy, developedByLink } from '@/context/constants'
+import { Col, Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Row } from 'react-bootstrap'
+import { FaChevronUp, FaGlobe } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -25,17 +23,9 @@ const Footer = () => {
               Eduport education theme, built specifically for the education centers which is dedicated to teaching and involving learners.
             </p>
             <ul className="list-inline mb-0 mt-3">
-              {socialMediaLinks.map((item, idx) => {
-                const Icon = item.icon
-                return (
-                  <li className="list-inline-item" key={idx}>
-
-                    <Link className={clsx('btn btn-white btn-sm shadow px-2', item.variant)} to="">
-                      <Icon className="fa-fw" />
-                    </Link>
-                  </li>
-                )
-              })}
+              {socialMediaLinks.map((link) => (
+                <img key={link.icon} className="tw:size-6" src={link.icon} />
+              ))}
             </ul>
           </Col>
           <Col lg={6}>
@@ -68,13 +58,11 @@ const Footer = () => {
             <Row className="g-2 mt-2">
               <Col xs={6} sm={4} md={3} lg={6}>
                 <span role="button">
-
                   <img height={45} width={145} src={googlePlay} alt="google-play" />
                 </span>
               </Col>
               <Col xs={6} sm={4} md={3} lg={6}>
                 <span role="button">
-
                   <img height={45} width={145} src={playStore} alt="app-store" />
                 </span>
               </Col>
@@ -86,7 +74,6 @@ const Footer = () => {
           <Container className="px-0">
             <div className="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
               <div className="text-body-secondary">
-
                 Copyrights ©2024 Eduport. Build by
                 <Link to={developedByLink} className="text-body-secondary text-primary-hover">
                   {developedBy}

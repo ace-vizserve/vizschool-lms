@@ -15,7 +15,7 @@ const Categories = () => {
       <CourseCategories />
       <Languages />
       <ActionBox />
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

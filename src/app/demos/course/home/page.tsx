@@ -23,7 +23,7 @@ const CourseHome = () => {
         <LiveCourses />
         <ActionBox2 />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

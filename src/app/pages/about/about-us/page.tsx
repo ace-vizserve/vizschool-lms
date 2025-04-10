@@ -17,7 +17,7 @@ const AboutUs = () => {
         <Clients />
         <Team />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

@@ -23,7 +23,7 @@ const AbroadHome = () => {
         <ActionBox />
         <ContactForm />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

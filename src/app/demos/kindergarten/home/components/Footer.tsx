@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom'
 import { Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
+import { footerLinks2, socialMediaLinks } from '@/assets/data/footer-items'
 import logoLight from '@/assets/images/logo-light.svg'
 import { developedBy, developedByLink } from '@/context/constants'
-import { footerLinks2, socialMediaLinks } from '@/assets/data/footer-items'
-import clsx from 'clsx'
 
 const Footer = () => {
   return (
@@ -170,35 +169,24 @@ const Footer = () => {
         <Row>
           <Col lg={6} className="mx-auto text-center mb-5">
             <Link to="/">
-
               <img className="h-40px" src={logoLight} alt="logo" />
             </Link>
             <p className="mt-3 text-white">
               Eduport education theme, built specifically for the education centers which is dedicated to teaching and involving learners.
             </p>
             <ul className="nav justify-content-center justify-content-center text-primary-hover mt-3 mt-md-0">
-              {footerLinks2.map((item, idx) => (
-                <li className="nav-item" key={idx}>
-                  <Link className="nav-link text-white" to={item.link ?? ''}>
-                    {item.name}
-                  </Link>
-                </li>
+              {footerLinks2[1].items.slice(2).map((item, i) => (
+                <p key={i} className="tw:text-white tw:text-xs tw:md:text-sm">
+                  {item.name}
+                </p>
               ))}
             </ul>
             <ul className="list-inline mb-0 mt-3">
-              {socialMediaLinks.map((item, idx) => {
-                const Icon = item.icon
-                return (
-                  <li className="list-inline-item" key={idx}>
-                    <span className={clsx('btn btn-white btn-sm shadow px-2', item.variant)} role="button">
-                      <Icon className="fa-fw" />
-                    </span>
-                  </li>
-                )
-              })}
+              {socialMediaLinks.map((link) => (
+                <img key={link.icon} className="tw:size-6" src={link.icon} />
+              ))}
             </ul>
             <div className="text-white text-primary-hover mt-3">
-
               Copyrights ©2024 Eduport. Build by
               <Link to={developedByLink} target="_blank" className="text-reset">
                 {developedBy}

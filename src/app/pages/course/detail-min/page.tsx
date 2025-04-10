@@ -13,7 +13,7 @@ const DetailMinimal = () => {
         <BannerVideo />
         <CourseDetails />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

@@ -15,7 +15,7 @@ const CourseDetail = () => {
         <CourseDetails />
         <ListedCourses />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }
