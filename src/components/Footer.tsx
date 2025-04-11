@@ -107,7 +107,7 @@ const Footer = () => {
           <div className="tw:w-full tw:md:w-max tw:grid tw:grid-cols-2 tw:xl:grid-cols-4 tw:gap-6">
             <div className="tw:w-full tw:flex tw:items-center tw:md:justify-center tw:gap-2">
               <HandshakeIcon className="tw:stroke-primary" />
-              <span className="tw:text-xs tw:text-primary">Terms and conditions</span>
+              <span className="tw:text-xs tw:text-primary">Terms&nbsp;and&nbsp;conditions</span>
             </div>
             <div className="tw:w-full tw:flex tw:items-center tw:justify-end tw:md:justify-center tw:gap-2">
               <TicketSlashIcon className="tw:stroke-primary" />

@@ -49,11 +49,14 @@ function ClassesTutors() {
           <motion.div
             initial={{
               opacity: 0,
+              translateX: -100,
             }}
             whileInView={{
               opacity: 1,
+              translateX: 0,
               transition: {
                 opacity: { ease: 'linear' },
+                translateX: { type: 'spring' },
               },
             }}
             viewport={{ once: true, margin: '-80% 0px' }}
