@@ -23,7 +23,7 @@ function Testimonials() {
           <h1 className="tw:sm:w-3/4 tw:text-center tw:text-balance tw:text-3xl tw:md:text-4xl lg:tw:text-5xl">Students & Parents Love VizSchool!</h1>
           <div className="tw:w-full tw:flex tw:flex-col tw:sm:flex-row tw:sm:gap-6 tw:flex-wrap tw:justify-center">
             {ourStatsData.map((stat, index) => (
-              <StatItem {...stat} key={index} />
+              <StatItem index={index} {...stat} key={index} />
             ))}
           </div>
         </div>
@@ -60,7 +60,7 @@ const TestimonialSlide = memo(function ({ image, name, status, testimony, curren
 
   if (isPending) {
     return (
-      <div className="tw:w-full tw:h-96 tw:flex tw:items-center tw:justify-center">
+      <div className="tw:w-full tw:h-screen tw:md:h-80 tw:flex tw:items-center tw:justify-center">
         <Loader2Icon className="tw:size-8 tw:stroke-3 tw:stroke-primary tw:animate-spin" />
       </div>
     )
@@ -79,7 +79,7 @@ const TestimonialSlide = memo(function ({ image, name, status, testimony, curren
           opacity: 1,
         }}
         className="tw:w-full tw:h-full">
-        <img loading="lazy" src={image} className="tw:max-h-96 tw:w-full tw:h-full tw:border-primary tw:border-4 tw:rounded-2xl tw:object-cover" />
+        <img loading="lazy" src={image} className="tw:aspect-video tw:h-80 tw:border-primary tw:border-4 tw:rounded-2xl tw:object-cover" />
       </motion.div>
 
       <div className="tw:w-full tw:h-full tw:flex tw:flex-col tw:justify-between tw:p-0 tw:lg:p-9 tw:gap-7 tw:md:gap-11">
@@ -94,7 +94,7 @@ const TestimonialSlide = memo(function ({ image, name, status, testimony, curren
           animate={{
             opacity: 1,
           }}>
-          <p className="tw:italic tw:max-w-prose tw:text-sm tw:md:text-base tw:lg:text-lg tw:text-muted-foreground tw:text-balance tw:-tracking-tighter">
+          <p className="tw:line-clamp-4 tw:md:line-clamp-5 tw:italic tw:max-w-prose tw:text-sm tw:md:text-base tw:lg:text-lg tw:text-muted-foreground tw:text-balance tw:-tracking-tighter">
             {testimony}
           </p>
           <div className="tw:!space-y-1 tw:md:!space-y-2">
@@ -129,9 +129,26 @@ const TestimonialSlide = memo(function ({ image, name, status, testimony, curren
   )
 })
 
-function StatItem({ description, icon, stats }: OurStatsType) {
+function StatItem({ description, icon, stats, index }: OurStatsType & { index: number }) {
   return (
-    <div className="tw:flex tw:flex-col tw:items-center tw:justify-center">
+    <motion.div
+      initial={{
+        opacity: 0,
+        translateY: 20,
+      }}
+      whileInView={{
+        opacity: 1,
+        translateY: 0,
+        transition: {
+          default: { type: 'spring' },
+          opacity: { ease: 'linear' },
+        },
+      }}
+      transition={{
+        delay: 0.0 + index + 0.5,
+      }}
+      viewport={{ once: true, amount: 'all' }}
+      className="tw:flex tw:flex-col tw:items-center tw:justify-center">
       <div className="tw:size-24 tw:md:size-32">
         <Lottie animationData={icon} loop={true} />
       </div>
@@ -141,7 +158,7 @@ function StatItem({ description, icon, stats }: OurStatsType) {
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
