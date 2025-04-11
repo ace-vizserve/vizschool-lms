@@ -1,8 +1,8 @@
 import Footer from '@/components/Footer'
+import PageMetaData from '@/components/PageMetaData'
 import Banner from './components/Banner'
 import EventDetailsContent from './components/EventDetailsContent'
 import TopNavigationBar from './components/TopNavigationBar'
-import PageMetaData from '@/components/PageMetaData'
 
 const EventDetailPage = () => {
   return (
@@ -13,7 +13,7 @@ const EventDetailPage = () => {
         <Banner />
         <EventDetailsContent />
       </main>
-      <Footer className="pt-5 bg-light" />
+      <Footer />
     </>
   )
 }

@@ -17,7 +17,7 @@ const Pricing = () => {
         <Features />
         <Faqs />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

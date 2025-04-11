@@ -14,7 +14,7 @@ const CourseGrid = () => {
         <PageBanner />
         <Courses />
         <NewsLetter />
-        <Footer className="bg-light" />
+        <Footer />
       </main>
     </>
   )

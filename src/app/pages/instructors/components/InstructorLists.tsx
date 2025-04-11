@@ -2,13 +2,11 @@ import { socialMediaLinks } from '@/assets/data/footer-items'
 import ChoicesFormInput from '@/components/form/ChoicesFormInput'
 import { getAllInstructors } from '@/helpers/data'
 import type { InstructorType } from '@/types/other'
-import clsx from 'clsx'
 
-import { Link } from 'react-router-dom'
+import { useFetchData } from '@/hooks/useFetchData'
 import { Button, Card, CardBody, CardTitle, Col, Container, Row } from 'react-bootstrap'
 import { FaSearch, FaStar } from 'react-icons/fa'
 import Pagination from './Pagination'
-import { useFetchData } from '@/hooks/useFetchData'
 
 const InstructorCard = ({ instructor }: { instructor: InstructorType }) => {
   const { image, name, college, department, description, rating } = instructor
@@ -36,16 +34,9 @@ const InstructorCard = ({ instructor }: { instructor: InstructorType }) => {
             <div className="d-sm-flex justify-content-sm-between align-items-center">
               <h6 className="text-orange mb-0">{department}</h6>
               <ul className="list-inline mb-0 mt-3 mt-sm-0">
-                {socialMediaLinks.map((social, idx) => {
-                  const Icon = social.icon
-                  return (
-                    <li className="list-inline-item" key={idx}>
-                      <Link className={clsx('mb-0 me-1', social.variant)} to="">
-                        <Icon />
-                      </Link>
-                    </li>
-                  )
-                })}
+                {socialMediaLinks.map((link) => (
+                  <img key={link.icon} className="tw:size-6" src={link.icon} />
+                ))}
               </ul>
             </div>
           </CardBody>

@@ -24,6 +24,9 @@ import {
 import { Fragment } from 'react/jsx-runtime'
 import * as yup from 'yup'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const ReviewCard = ({ avatar, description, name, rating }: ReviewType) => {
   return (
     <>
@@ -46,7 +49,6 @@ const ReviewCard = ({ avatar, description, name, rating }: ReviewType) => {
                     ))}
                   {!Number.isInteger(rating) && (
                     <li className="list-inline-item me-1 small">
-
                       <FaStarHalfAlt size={14} className="text-warning" />
                     </li>
                   )}
@@ -196,11 +198,10 @@ const BookDetails = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (
@@ -230,7 +231,6 @@ const BookDetails = () => {
                             ))}
                           {!Number.isInteger(progress.length - idx) && (
                             <li className="list-inline-item me-1 small">
-
                               <FaStarHalfAlt size={14} className="text-warning" />
                             </li>
                           )}

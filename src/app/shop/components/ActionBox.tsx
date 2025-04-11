@@ -3,6 +3,9 @@ import element29 from '@/assets/images/element/29.svg'
 import { Button, Col, Container, Row } from 'react-bootstrap'
 import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const ActionBox = () => {
   return (
     <section className="pt-0">
@@ -26,11 +29,10 @@ const ActionBox = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (

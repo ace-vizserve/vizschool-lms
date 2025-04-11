@@ -1,4 +1,4 @@
-import LogoBox from '@/components/LogoBox'
+import LogoBox from '@/components/logo-box'
 import TopNavbar from '@/components/TopNavbar'
 import AppMenu from '@/components/TopNavbar/components/AppMenu'
 import ProfileDropdown from '@/components/TopNavbar/components/ProfileDropdown'

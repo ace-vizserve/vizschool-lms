@@ -11,6 +11,9 @@ import avatar4 from '@/assets/images/avatar/04.jpg'
 import avatar9 from '@/assets/images/avatar/09.jpg'
 import pattern2 from '@/assets/images/pattern/02.png'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const Reviews = () => {
   return (
     <section className="bg-light">
@@ -50,11 +53,10 @@ const Reviews = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (
@@ -167,11 +169,10 @@ const Reviews = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (
@@ -209,11 +210,10 @@ const Reviews = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (

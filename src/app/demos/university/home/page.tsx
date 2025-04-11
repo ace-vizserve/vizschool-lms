@@ -23,7 +23,7 @@ const UniversityHome = () => {
         <LatestNews />
         <UpcomingEvents />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

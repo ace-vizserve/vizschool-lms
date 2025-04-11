@@ -15,7 +15,7 @@ const List = () => {
         <CourseList />
         <Newsletter />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

@@ -13,7 +13,7 @@ const BlogGrid = () => {
         <Banner />
         <Blogs />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

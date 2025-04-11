@@ -15,7 +15,7 @@ const Instructors = () => {
         <InstructorLists />
         <ActionBox />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

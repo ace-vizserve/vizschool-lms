@@ -21,7 +21,7 @@ const themeKey = 'data-bs-theme'
 const LayoutProvider = ({ children }: ChildrenType) => {
   const getSavedTheme = (): LayoutState['theme'] => {
     const foundTheme = localStorage.getItem(storageThemeKey)
-    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    const preferredTheme = 'light'
     if (foundTheme) {
       if (foundTheme === 'auto') {
         toggleDocumentAttribute(themeKey, preferredTheme)

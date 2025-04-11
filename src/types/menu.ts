@@ -12,7 +12,7 @@ export type MenuItemType = {
   children?: MenuItemType[]
   divider?: boolean
   badge?: string
-  isMegaMenu?: Boolean
+  isMegaMenu?: boolean
 }
 
 export type MegaMenuType = {

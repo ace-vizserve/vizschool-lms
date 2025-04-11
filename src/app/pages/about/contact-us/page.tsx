@@ -13,7 +13,7 @@ const ContactUs = () => {
         <ContactCards />
         <ContactFormAndMap />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

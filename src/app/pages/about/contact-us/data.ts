@@ -1,5 +1,5 @@
 export type ContactInfo = {
-  name: String
+  name: string
   address: string
   phone: string
   email: string

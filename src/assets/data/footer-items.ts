@@ -1,5 +1,8 @@
+import facebookLogo from '@/assets/images/footer/facebook-logo.svg'
+import instagramLogo from '@/assets/images/footer/instagram-logo.svg'
+import linkedinLogo from '@/assets/images/footer/linkedin-logo.svg'
+import { MailIcon, MapPinnedIcon, PhoneIcon } from 'lucide-react'
 import type { IconType } from 'react-icons'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 
 type FooterLink = {
   title: string
@@ -10,74 +13,66 @@ type FooterLink = {
   }[]
 }
 
-type FooterLinkType = {
-  name: string
-  link?: string
-}
-
-type SocialMediaType = {
-  icon: IconType
-  variant: string
-}
-
 export const footerLinks: FooterLink[] = [
   {
-    title: 'Company',
+    title: 'Get Started',
     items: [
-      { name: 'About us', link: '/about' },
-      { name: 'Contact us', link: '/contact' },
-      { name: 'News and Blogs' },
-      { name: 'Library' },
-      { name: 'Career' },
+      { name: 'Why VizSchool?', link: '/about' },
+      { name: 'Courses', link: '/contact' },
+      { name: 'Tutors' },
+      { name: 'Student Reviews' },
+      { name: 'Pricing & Plans' },
+      { name: 'Blog' },
+      { name: 'Learning Resources' },
+      { name: 'Contact Us' },
+    ],
+  },
+]
+
+export const footerLinks2: FooterLink[] = [
+  {
+    title: 'Primary Classes',
+    items: [
+      { name: 'Primary 1', link: '/about' },
+      { name: 'Primary 2', link: '/contact' },
+      { name: 'Primary 3' },
+      { name: 'Primary 4' },
+      { name: 'Primary 5' },
+      { name: 'Primary 6' },
     ],
   },
   {
-    title: 'Community',
-    items: [{ name: 'Documentation' }, { name: 'Faq', link: '/help/faq' }, { name: 'Form' }, { name: 'Sitemap' }],
-  },
-  {
-    title: 'Teaching',
-    items: [{ name: 'Become a teacher' }, { name: 'How to guide', link: '/help/faq' }, { name: 'Term & condition' }],
+    title: 'Secondary Classes',
+    items: [{ name: 'Secondary 1', link: '/about' }, { name: 'Secondary 2', link: '/contact' }, { name: 'Secondary 3' }, { name: 'Secondary 4' }],
   },
 ]
 
-export const footerLinks2: FooterLinkType[] = [
+export const talkToUsLinks = [
   {
-    name: 'About',
-    link: '/pages/about/about-us',
+    icon: MailIcon,
+    details: 'care@vizschool.com',
   },
   {
-    name: 'Terms',
+    icon: PhoneIcon,
+    details: '+65 6451 0080',
   },
   {
-    name: 'Privacy',
-  },
-  {
-    name: 'Career',
-  },
-  {
-    name: 'Contact us',
-  },
-  {
-    name: 'Cookies',
+    icon: MapPinnedIcon,
+    details: '223 Mountbatten Road, 03-08 223@Mountbatten Singapore 398008',
   },
 ]
 
-export const socialMediaLinks: SocialMediaType[] = [
+export const socialMediaLinks = [
   {
-    icon: FaFacebookF,
-    variant: 'text-facebook',
+    icon: facebookLogo,
+    link: '#',
   },
   {
-    icon: FaInstagram,
-    variant: 'text-instagram',
+    icon: instagramLogo,
+    link: '#',
   },
   {
-    icon: FaTwitter,
-    variant: 'text-twitter',
-  },
-  {
-    icon: FaLinkedinIn,
-    variant: 'text-linkedin',
+    icon: linkedinLogo,
+    link: '#',
   },
 ]

@@ -1,36 +1,17 @@
-import LogoBox from '@/components/LogoBox'
+import logo from '@/assets/images/vizschool-logo.png'
 import TopNavbar from '@/components/TopNavbar'
-import { useLayoutContext } from '@/context/useLayoutContext'
-import { Container } from 'react-bootstrap'
-
-import AppMenu from '@/components/TopNavbar/components/AppMenu'
-import ProfileDropdown from '@/components/TopNavbar/components/ProfileDropdown'
+import Menu from '@/components/TopNavbar/components/menu'
+import { Link } from 'react-router-dom'
 
 const TopNavbar1 = () => {
-  const { appMenuControl } = useLayoutContext()
   return (
     <TopNavbar>
-      <Container fluid className="px-3 px-xl-5">
-        <LogoBox height={36} width={150} />
-        <button
-          onClick={appMenuControl.toggle}
-          className="navbar-toggler ms-auto"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse"
-          aria-expanded={appMenuControl.open}
-          aria-label="Toggle navigation">
-          <span className="navbar-toggler-animation">
-            <span />
-            <span />
-            <span />
-          </span>
-        </button>
-
-        <AppMenu mobileMenuOpen={appMenuControl.open} menuClassName="me-auto" showExtraPages showCategories showMegaMenu searchInput />
-        <ProfileDropdown className="ms-1 ms-lg-0" />
-      </Container>
+      <div className="tw:flex tw:justify-between tw:lg:justify-center tw:items-center tw:gap-8">
+        <Link to="/">
+          <img className="tw:object-cover tw:size-16 tw:md:size-24" src={logo} alt="logo" />
+        </Link>
+        <Menu />
+      </div>
     </TopNavbar>
   )
 }

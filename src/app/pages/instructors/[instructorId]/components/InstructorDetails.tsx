@@ -18,6 +18,9 @@ import Counter from './Counter'
 import CoursesList from './CoursesList'
 import RelatedInstructors from './RelatedInstructors'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const InstructorDetailCard = () => {
   return (
     <Card className="shadow p-2 mb-4 text-center">
@@ -35,11 +38,10 @@ const InstructorDetailCard = () => {
             ))}
           {!Number.isInteger(4.5) && (
             <li className="list-inline-item me-1 small">
-
               <FaStarHalfAlt size={14} className="text-warning" />
             </li>
           )}
-          {4.5 < 5 &&
+          {rating1 < rating2 &&
             Array(5 - Math.ceil(4.5))
               .fill(0)
               .map((_star, idx) => (
@@ -51,25 +53,21 @@ const InstructorDetailCard = () => {
         </ul>
         <ul className="list-inline mb-0">
           <li className="list-inline-item">
-
             <a className="btn px-2 btn-sm bg-facebook" href="#">
               <FaFacebookF className="h-13px" />
             </a>
           </li>
           <li className="list-inline-item">
-
             <a className="btn px-2 btn-sm bg-instagram-gradient" href="#">
               <FaInstagram />
             </a>
           </li>
           <li className="list-inline-item">
-
             <a className="btn px-2 btn-sm bg-twitter" href="#">
               <FaTwitter />
             </a>
           </li>
           <li className="list-inline-item">
-
             <a className="btn px-2 btn-sm bg-linkedin" href="#">
               <FaLinkedinIn className="fab fa-fw fa-linkedin-in" />
             </a>

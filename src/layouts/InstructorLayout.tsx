@@ -1,7 +1,6 @@
 import { INSTRUCTOR_MENU_ITEMS } from '@/assets/data/menu-items'
 import Preloader from '@/components/Preloader'
 import { useAuthContext } from '@/context/useAuthContext'
-import { useLayoutContext } from '@/context/useLayoutContext'
 import useToggle from '@/hooks/useToggle'
 import useViewPort from '@/hooks/useViewPort'
 import { ChildrenType } from '@/types/component-props'
@@ -42,7 +41,6 @@ const VerticalMenu = () => {
 
 const InstructorLayout = ({ children }: ChildrenType) => {
   const { width } = useViewPort()
-  const {} = useLayoutContext()
   const { isTrue: isOffCanvasMenuOpen, toggle: toggleOffCanvasMenu } = useToggle()
 
   return (

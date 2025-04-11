@@ -50,6 +50,7 @@ export const initIsotope = () => {
                     const filterValue = menuItem.getAttribute('data-filter')
                     if (filterValue) {
                       filter.arrange({ filter: filterValue })
+                      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                       menuItems.forEach((control) => control.classList.remove('active')), menuItem.classList.add('active')
                     }
                   })

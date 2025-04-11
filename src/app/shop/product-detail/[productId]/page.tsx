@@ -8,6 +8,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import BookDetails from './components/BookDetails'
 import ProductImage from './components/ProductImage'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const ProductDetailPage = () => {
   const [event, setEvent] = useState<BookType>()
   const { eventId } = useParams()
@@ -21,7 +24,7 @@ const ProductDetailPage = () => {
         else navigate('/error-404')
       }
     })()
-  }, [])
+  }, [eventId, navigate])
 
   return (
     <main>
@@ -47,11 +50,10 @@ const ProductDetailPage = () => {
                       ))}
                     {!Number.isInteger(4.5) && (
                       <li className="list-inline-item me-1 small">
-
                         <FaStarHalfAlt size={14} className="text-warning" />
                       </li>
                     )}
-                    {4.5 < 5 &&
+                    {rating1 < rating2 &&
                       Array(5 - Math.ceil(4.5))
                         .fill(0)
                         .map((_star, idx) => (

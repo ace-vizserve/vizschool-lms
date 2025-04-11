@@ -22,7 +22,7 @@ const SchoolHome = () => {
         <Gallery />
         <Blogs />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
       <AdmissionAlert />
     </>
   )

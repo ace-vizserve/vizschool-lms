@@ -21,6 +21,9 @@ import Sticky from 'react-sticky-el'
 import avatar5 from '@/assets/images/avatar/05.jpg'
 import useViewPort from '@/hooks/useViewPort'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const PriceCard = () => {
   return (
     <Card className="card-body border p-4">
@@ -131,11 +134,10 @@ const PriceCard = () => {
             ))}
           {!Number.isInteger(4.5) && (
             <li className="list-inline-item me-1 small">
-
               <FaStarHalfAlt size={14} className="text-warning" />
             </li>
           )}
-          {4.5 < 5 &&
+          {rating1 < rating2 &&
             Array(5 - Math.ceil(4.5))
               .fill(0)
               .map((_star, idx) => (
@@ -161,7 +163,6 @@ const PopularTags = () => {
       <ul className="list-inline mb-0">
         {tags.map((tag, idx) => (
           <li className="list-inline-item" key={idx}>
-
             <Button variant="outline-light" size="sm">
               {tag}
             </Button>

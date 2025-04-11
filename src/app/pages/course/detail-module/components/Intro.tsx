@@ -1,6 +1,9 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import { FaGlobe, FaRegStar, FaStar, FaStarHalfAlt, FaUserGraduate } from 'react-icons/fa'
 
+const rating1 = 4.5
+const rating2 = 5
+
 const Intro = () => {
   return (
     <section className="bg-blue py-7">
@@ -27,11 +30,10 @@ const Intro = () => {
                     ))}
                   {!Number.isInteger(4.5) && (
                     <li className="list-inline-item me-1 small">
-
                       <FaStarHalfAlt size={14} className="text-warning" />
                     </li>
                   )}
-                  {4.5 < 5 &&
+                  {rating1 < rating2 &&
                     Array(5 - Math.ceil(4.5))
                       .fill(0)
                       .map((_star, idx) => (

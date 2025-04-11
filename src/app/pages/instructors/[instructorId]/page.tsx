@@ -1,11 +1,11 @@
 import Footer from '@/components/Footer'
+import PageMetaData from '@/components/PageMetaData'
 import { getInstructorById } from '@/helpers/data'
 import { InstructorType } from '@/types/other'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import InstructorDetails from './components/InstructorDetails'
 import TopNavigationBar from './components/TopNavigationBar'
-import PageMetaData from '@/components/PageMetaData'
 
 const InstructorDetail = () => {
   const [instructor, setInstructor] = useState<InstructorType>()
@@ -20,7 +20,7 @@ const InstructorDetail = () => {
         else navigate('/error-404')
       }
     })()
-  }, [])
+  }, [instructorId, navigate])
 
   return (
     <>
@@ -29,7 +29,7 @@ const InstructorDetail = () => {
       <main>
         <InstructorDetails />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

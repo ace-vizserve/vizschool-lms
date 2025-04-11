@@ -19,7 +19,7 @@ const BecomeInstructorPage = () => {
         <FormAndTabs />
         <ActionBox />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

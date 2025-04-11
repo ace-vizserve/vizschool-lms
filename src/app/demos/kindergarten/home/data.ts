@@ -9,7 +9,7 @@ import element4 from '@/assets/images/element/song.svg'
 export type OfferCourseType = {
   image: string
   title: string
-  description: String
+  description: string
   courses: number
 }
 

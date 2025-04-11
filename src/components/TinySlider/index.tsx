@@ -1,7 +1,8 @@
-import React, { type ReactNode, useEffect, useRef, useState } from 'react'
-import { tns, type TinySliderInstance, TinySliderInfo } from 'tiny-slider'
-import { objectsEqual, childrenEqual } from './utils'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { type TinySliderInstance, TinySliderInfo, tns } from 'tiny-slider'
 import { type CommonOptions } from 'tiny-slider/src/tiny-slider'
+import { childrenEqual, objectsEqual } from './utils'
 
 type TinySliderProps = {
   settings?: CommonOptions
@@ -39,27 +40,7 @@ const TinySlider: React.FC<TinySliderProps> = ({
   let dragging = false
   let count = 0
 
-  const build = (customSettings: CommonOptions = {}) => {
-    if (slider && slider.destroy && slider.rebuild) {
-      slider.destroy()
-      slider.rebuild()
-    } else {
-      if (ref.current == null) return
-      const mergedSettings = {
-        ...customSettings,
-        container: ref.current,
-        onInit: () => postInit(),
-      }
-
-      setSlider(tns(mergedSettings))
-
-      if (!slider) return
-
-      if (ref.current) ref.current.className += ' tns-item'
-    }
-  }
-
-  const postInit = (): any => {
+  const postInit = useCallback((): any => {
     if (!slider) {
       if (count >= 4) {
         return onInit?.(false)
@@ -89,11 +70,34 @@ const TinySlider: React.FC<TinySliderProps> = ({
     }
 
     onInit?.(true)
-  }
+  }, [])
+
+  const build = useCallback(
+    (customSettings: CommonOptions = {}) => {
+      if (slider && slider.destroy && slider.rebuild) {
+        slider.destroy()
+        slider.rebuild()
+      } else {
+        if (ref.current == null) return
+        const mergedSettings = {
+          ...customSettings,
+          container: ref.current,
+          onInit: () => postInit(),
+        }
+
+        setSlider(tns(mergedSettings))
+
+        if (!slider) return
+
+        if (ref.current) ref.current.className += ' tns-item'
+      }
+    },
+    [postInit, slider],
+  )
 
   useEffect(() => {
     build(settings)
-  }, [settings])
+  }, [build, settings])
 
   useEffect(() => {
     if (!objectsEqual(settings, prevSettings) || !childrenEqual(children, prevChildren)) {
@@ -102,7 +106,7 @@ const TinySlider: React.FC<TinySliderProps> = ({
 
     setPrevSettings(settings)
     setPrevChildren(children)
-  }, [settings, children])
+  }, [settings, children, prevSettings, prevChildren, build])
 
   useEffect(() => {
     return () => {

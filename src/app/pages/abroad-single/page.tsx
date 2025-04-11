@@ -15,7 +15,7 @@ const AbroadSinglePage = () => {
         <Details />
         <ActionBox />
       </main>
-      <Footer className="bg-light" />
+      <Footer />
     </>
   )
 }

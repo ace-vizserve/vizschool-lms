@@ -1,4 +1,4 @@
-import LogoBox from '@/components/LogoBox'
+import LogoBox from '@/components/logo-box'
 import TopNavbar from '@/components/TopNavbar'
 import AppMenu from '@/components/TopNavbar/components/AppMenu'
 import ProfileDropdown from '@/components/TopNavbar/components/ProfileDropdown'
@@ -11,7 +11,7 @@ const TopNavigationBar = () => {
   return (
     <TopNavbar>
       <Container>
-        <LogoBox height={36} width={143} />
+        <LogoBox />
         <TopbarMenuToggler />
         <AppMenu mobileMenuOpen={appMenuControl.open} menuClassName="mx-auto" showExtraPages searchInput />
         <ProfileDropdown className="ms-1 ms-lg-0" />
