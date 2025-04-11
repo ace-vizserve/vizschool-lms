@@ -62,7 +62,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </MaxWidthWrapper>
-      <MaxWidthWrapper>
+      <MaxWidthWrapper className="container">
         <motion.div
           initial={{
             opacity: 0,
@@ -77,7 +77,7 @@ const Hero = () => {
             },
           }}
           viewport={{ once: true, margin: '-80% 0px' }}
-          className="tw:h-screen tw:max-h-[650px] tw:w-full tw:flex tw:flex-col tw:xl:flex-row tw:justify-center tw:items-center tw:gap-11">
+          className="tw:h-screen tw:max-h-[650px] tw:w-full tw:flex tw:flex-col tw:xl:flex-row tw:justify-center tw:items-center">
           <div className="tw:w-full tw:h-full tw:flex tw:flex-col tw:justify-center tw:items-center tw:xl:items-start tw:!space-y-6">
             <h1 className="tw:w-full tw:sm:w-3/4 tw:xl:text-start tw:text-center tw:text-balance tw:text-3xl tw:md:text-5xl lg:tw:text-6xl">
               Drive success with our smart&nbsp;solutions
@@ -93,14 +93,18 @@ const Hero = () => {
           </div>
 
           <div className="tw:h-full tw:w-full tw:relative tw:flex tw:items-center tw:justify-center">
-            <svg className="tw:w-full tw:h-full tw:absolute tw:aspect-square" viewBox="0 0 520 523" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className="tw:w-full tw:h-full tw:xl:h-3/4 tw:absolute tw:aspect-square"
+              viewBox="0 0 520 523"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0.715957 309.947C2.79183 231.478 27.9493 157.715 79.8466 98.5206C131.958 39.0197 211.105 -5.70612 285.791 1.25346C360.477 8.21307 430.567 67.6782 474.269 144.788C518.185 221.59 535.794 316.55 500.67 378.784C465.842 441.225 378.202 470.427 292.381 494.507C206.856 518.794 123.661 537.858 71.2245 505.339C19.2979 472.719 -1.57432 388.723 0.715957 309.947Z"
                 fill="#007AFF"
               />
             </svg>
 
-            <Lottie className="tw:w-full tw:h-full tw:absolute tw:aspect-square" animationData={kidStudying} loop={true} />
+            <Lottie className="tw:w-full tw:h-full tw:xl:h-3/4 tw:absolute tw:aspect-square" animationData={kidStudying} loop={true} />
           </div>
         </motion.div>
       </MaxWidthWrapper>

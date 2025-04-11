@@ -1,4 +1,5 @@
 import { footerLinks, footerLinks2, socialMediaLinks, talkToUsLinks } from '@/assets/data/footer-items'
+import logo from '@/assets/images/vizschool-logo.png'
 import { GlobeLockIcon, HandshakeIcon, MapIcon, TicketSlashIcon } from 'lucide-react'
 import MaxWidthWrapper from './max-width-wrapper'
 import { Button } from './ui/button'
@@ -73,7 +74,10 @@ const Footer = () => {
           </div>
         </div>
         <div className="tw:grid tw:grid-cols-1 tw:md:grid-cols-2 tw:lg:grid-cols-3 tw:gap-8">
-          <div className="tw:w-max tw:mx-auto tw:md:mx-0 tw:space-y-4 tw:md:w-52">
+          <div className="tw:mx-auto tw:lg:mx-0 tw:p-4 tw:rounded-full tw:size-max tw:bg-white">
+            <img className="tw:object-cover tw:size-16 tw:md:size-24" src={logo} alt="logo" />
+          </div>
+          <div className="tw:flex tw:flex-col tw:items-center tw:lg:items-start tw:w-full tw:md:mx-0 tw:space-y-4 tw:lg:w-52">
             <p className="tw:text-white tw:font-bold tw:text-lg tw:text-center tw:md:text-start">Follow us</p>
             <div className="tw:flex tw:items-center tw:gap-4">
               {socialMediaLinks.map((link) => (
@@ -92,33 +96,32 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="tw:w-full tw:col-span-full tw:lg:col-span-1 tw:grid tw:grid-cols-2 tw:gap-6">
-            <div className="tw:flex tw:items-center tw:gap-2">
-              <HandshakeIcon className="tw:stroke-primary" />
-              <span className="tw:text-xs tw:text-primary tw:font-medium">Terms and conditions</span>
-            </div>
-            <div className="tw:justify-end tw:flex tw:items-center tw:gap-2">
-              <TicketSlashIcon className="tw:stroke-primary" />
-              <span className="tw:text-xs tw:text-primary tw:font-medium">Refund Policy</span>
-            </div>
-            <div className="tw:flex tw:items-center tw:gap-2">
-              <GlobeLockIcon className="tw:stroke-primary" />
-              <span className="tw:text-xs tw:text-primary tw:font-medium">Privacy Policy</span>
-            </div>
-            <div className="tw:justify-end tw:flex tw:items-center tw:gap-2">
-              <MapIcon className="tw:stroke-primary" />
-              <span className="tw:text-xs tw:text-primary tw:font-medium">Sitemap</span>
-            </div>
-          </div>
         </div>
       </MaxWidthWrapper>
       <div className="tw:h-0.5 tw:w-full tw:bg-white" />
       <MaxWidthWrapper>
-        <div className="tw:py-10 tw:flex tw:flex-col tw:md:flex-row tw:justify-between tw:items-center tw:w-full">
-          <h1 className="tw:text-2xl tw:md:text-4xl tw:text-white tw:font-bold">VizSchool</h1>
+        <div className="tw:py-10 tw:flex tw:flex-col tw:gap-8 tw:md:gap-0 tw:md:flex-row tw:justify-between tw:items-center tw:w-full">
           <span className="tw:text-white tw:text-xs tw:-tracking-tighter">
             Copyright © {new Date().getFullYear()} VizSchool. All rights reserved.
           </span>
+          <div className="tw:w-full tw:md:w-max tw:grid tw:grid-cols-2 tw:xl:grid-cols-4 tw:gap-6">
+            <div className="tw:w-full tw:flex tw:items-center tw:md:justify-center tw:gap-2">
+              <HandshakeIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary">Terms and conditions</span>
+            </div>
+            <div className="tw:w-full tw:flex tw:items-center tw:justify-end tw:md:justify-center tw:gap-2">
+              <TicketSlashIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary">Refund Policy</span>
+            </div>
+            <div className="tw:w-full tw:flex tw:items-center tw:justify-start tw:xl:justify-center tw:gap-2">
+              <GlobeLockIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary">Privacy Policy</span>
+            </div>
+            <div className="tw:w-full tw:flex tw:items-center tw:justify-end tw:md:justify-center tw:gap-2">
+              <MapIcon className="tw:stroke-primary" />
+              <span className="tw:text-xs tw:text-primary">Sitemap</span>
+            </div>
+          </div>
         </div>
       </MaxWidthWrapper>
     </footer>
